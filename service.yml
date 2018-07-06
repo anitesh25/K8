@@ -15,5 +15,5 @@ spec:
   selector:
     run: tomanitesh
     type: NodePort
-#status:
-#loadBalancer: {}
+status:
+  loadBalancer: {}
