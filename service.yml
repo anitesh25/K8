@@ -11,3 +11,5 @@ spec:
     protocol: TCP
   selector:
     run: tomanitesh
+#status:
+#loadBalancer: {}
