@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomanitesh
+spec:
+  selector:
+    matchLabels:
+      run: tomanitesh
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: tomanitesh
+    spec:
+      containers:
+      - name: tomanitesh
+        image: tomcat
+        ports:
+        - containerPort: 8080
