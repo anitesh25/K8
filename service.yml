@@ -6,7 +6,6 @@ metadata:
   name: tomcat 
   namespace: default
 spec:
-  clusterIP: 10.245.100.130 
   externalTrafficPolicy: Cluster
   ports:
   - nodePort: 3000
