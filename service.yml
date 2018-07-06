@@ -1,10 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: tomanitesh
-  labels:
-    run: tomanitesh
+  labels: 
+    run: tomcat 
+  name: tomcat 
+  namespace: default
 spec:
+  clusterIP: 10.245.100.130 
+  externalTrafficPolicy: Cluster
   ports:
   - nodePort: 3000
     port: 80
@@ -12,5 +15,6 @@ spec:
     protocol: TCP
   selector:
     run: tomanitesh
+    type: NodePort
 #status:
 #loadBalancer: {}
