@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+     - name: aniteshnginx
+       image: nginx
+
+kind: Pod
+metadata:
+  name: tomcatpod
+spec:
+  containers:
+     - name: tom
+       image: tomcat
+
+kind: Service
+metadata:
+  name: tom
+  labels:
+       run: tom
+spec:
+  type: NodePort
+  ports:
+     - port: 8080
+       targetPort: 1000
+       Protocol: TCP
+       name: http
+  selector:
+       run: tom
+
+kind: Ingress
+metadata: 
+  name: test-ingress 
+  annotations: 
+       nginx.ingress.kubernetes.io/rewrite-target: /
+spec: 
+  rules: 
+  - http: 
+      paths: 
+      - path: /testpath
+        backend:
+          serviceName: test 
+          servicePort: 8080 
