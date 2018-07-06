@@ -6,7 +6,8 @@ metadata:
     run: tomanitesh
 spec:
   ports:
-  - port: 80
+  - nodePort: 3000
+    port: 80
     targetPort: 1000
     protocol: TCP
   selector:
